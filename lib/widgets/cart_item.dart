@@ -6,7 +6,7 @@ class CartItem extends StatelessWidget {
   final String id;
   final String prodId;
 
-  final double price;
+  final num price;
   final int quantity;
   final String title;
 

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'package:shop_app/models/http_exception.dart';
+import 'package:shop_app/providers/keys.dart';
 
 class Auth with ChangeNotifier {
   String? _token;
@@ -85,13 +86,13 @@ class Auth with ChangeNotifier {
 
   Future<void> login(String email, String password) async {
     final url = Uri.parse(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyB1cbURGhZuE0mBPojKfkjQ2RrAjpGYsxo");
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${keys().google_key}");
     return _authenticate(email, password, url);
   }
 
   Future<void> signup(String email, String password) async {
     final url = Uri.parse(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB1cbURGhZuE0mBPojKfkjQ2RrAjpGYsxo");
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${keys().google_key}");
     return _authenticate(email, password, url);
   }
 

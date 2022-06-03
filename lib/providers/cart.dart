@@ -4,7 +4,7 @@ class CartItem{
   final String id;
   final String title;
   final int quantity;
-  final double price;
+  final num price;
 
   CartItem({
    required this.id,
@@ -56,7 +56,7 @@ void removeSingleItem(String productId){
     _items = {};
     notifyListeners();
   }
-  void addItem(String productId , double price , String title ){
+  void addItem(String productId , num price , String title ){
     if(_items.containsKey(productId)){
 
       _items.update(productId, (existingCartItem) => CartItem(

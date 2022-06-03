@@ -19,10 +19,10 @@ class ProductDetailsScreen extends StatelessWidget {
         // slivers : are scrollables areas on the screen
         slivers: [
           SliverAppBar(
-            expandedHeight: 300,
+            expandedHeight: 500,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
-              title: Text(loadedProduct.title),
+
               background: Hero(
                   tag: productId,
                   child: Image.network(
@@ -36,6 +36,9 @@ class ProductDetailsScreen extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
+               Text(loadedProduct.title,
+                   textAlign: TextAlign.center,
+                   style: TextStyle(color: Colors.black, fontSize: 25,),),
             Text(
               '\$${loadedProduct.price}',
               textAlign: TextAlign.center,
